@@ -710,6 +710,9 @@
      <!-- SBC HD audio dual channel support -->
     <bool name="config_enableSBCDualChannelAudio">false</bool>
      
+     <!-- Whether device supports variable refresh rate -->
+    <bool name="config_hasVariableRefreshRate">false</bool>
+     
      <!-- Advanced restart -->
     <bool name="config_powermenuadvanceddefault">true</bool>
 
