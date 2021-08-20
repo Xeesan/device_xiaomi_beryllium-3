@@ -17,6 +17,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/rr_beryllium.mk
 
 COMMON_LUNCH_CHOICES := \
+    rr_beryllium-user \
     rr_beryllium-userdebug \
-    rr_beryllium-user 
-    
+    rr_beryllium-eng
