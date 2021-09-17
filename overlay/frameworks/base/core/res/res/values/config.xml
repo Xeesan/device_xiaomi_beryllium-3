@@ -690,14 +690,6 @@
     <dimen name="status_bar_height_portrait">90.0px</dimen>
     <dimen name="status_bar_height_landscape">86.0px</dimen>
      
-     <!-- SysInfo for Beryllium -->
-    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
-    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
-    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
-    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
-    <integer name="config_sysCPUTempMultiplier">1000</integer>
-    <integer name="config_sysBatteryTempMultiplier">10</integer>
-     
      <!-- Smart charging -->
     <bool name="config_smartChargingAvailable">true</bool>
     <string name="config_smartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
@@ -722,26 +714,10 @@
     <!-- Whether device has a notch -->
     <bool name="config_haveNotch">true</bool>
 
-    <!-- Display mode remapping table.
-         If the mode names returned by the backend do not match
-         the predefined and translated strings in the Settings
-         app, they can be remapped here. The format is
-         "oldname:newname", one per entry. -->
-    <string-array name="config_displayModeMappings" translatable="false">
-        <item>OLED_native:standard</item>
-        <item>38oled_native:standard</item>
-        <item>00default:dynamic</item>
-        <item>sRGB_d65:srgb</item>
-        <item>srgb_d65:srgb</item>
-    </string-array>
-
-    <!-- Should we filter any display modes which are unampped? -->
-    <bool name="config_filterDisplayModes">true</bool>
-
     <!-- Default value for proximity check on screen wake
      NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
     <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">100</integer>
+    <integer name="config_proximityCheckTimeout">300</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 
     <!-- Whether device has a physical display cutout -->
@@ -750,6 +726,12 @@
     <!-- Do not translate. Default access point SSID used for tethering -->
     <string name="wifi_tether_configure_ssid_default" translatable="false">Poco F1</string>
 
+       <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+        <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
+    </string-array>
+     
     <!-- List supported color modes. -->
     <integer-array name="config_availableColorModes">
         <item>0</item> <!-- COLOR_MODE_NATURAL -->
